@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { useState } from 'react';
+let text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quo natus debitis numquam atque, at amet doloremque error ab perspiciatis nisi magnam distinctio voluptate cupiditate dolore vitae consequatur explicabo quia nulla dolorem. Enim maxime cum a possimus quis. Quos ipsa amet sed veniam corrupti recusandae voluptate. Quas reprehenderit libero culpa dolore, minima quibusdam, vero sed cum voluptas omnis eaque ducimus temporibus velit aliquid? Repudiandae magnam repellat delectus eaque. Ex eos iure ipsa laborum! Eveniet perspiciatis earum hic consequatur vel! Tempora officiis quas debitis totam, pariatur placeat cum maxime soluta a id, necessitatibus dolore numquam molestiae quae beatae est, culpa aperiam temporibus voluptatibus animi adipisci eveniet. Vero rem illo omnis doloremque. Ad repellendus molestias eius voluptatum nesciunt facilis. Nulla cupiditate itaque quos ducimus ea iusto ipsum voluptates quidem eius perferendis, quod iure recusandae quam numquam alias autem quaerat perspiciatis nostrum voluptate asperiores reiciendis eveniet. Accusamus atque ipsum, officia voluptatum corrupti magnam ipsam dicta? Beatae odit consequatur necessitatibus voluptates quasi reiciendis dolorum commodi nam hic praesentium, officia ex libero, nobis illum non omnis. Sint enim iure molestiae, eos corporis rerum sunt architecto voluptate in alias sit nam quia necessitatibus ab accusantium saepe cum? At repellat repellendus laboriosam modi quidem saepe necessitatibus dicta perferendis, quia aliquid accusamus mollitia praesentium? Ut fugiat alias voluptas sequi sunt nemo incidunt ex excepturi saepe omnis! Ipsum modi sed, numquam natus dignissimos et nesciunt beatae eaque alias quas non quos aut maxime quis provident eius voluptas, corporis expedita! Necessitatibus, modi quasi soluta odit eligendi nobis libero exercitationem recusandae eius tenetur! Veniam a maxime dolorem molestias, similique, aliquam voluptatibus voluptate temporibus provident facere error id aliquid nobis placeat dolor? Iusto similique mollitia error quo, distinctio totam ut. Quos iste ab repellendus, vero ratione nostrum nulla sapiente, voluptatum minus repellat aut voluptates quidem similique obcaecati doloremque sint quia dolor ex sed optio sequi omnis ullam magni? Recusandae illum odit, aspernatur atque earum a eaque minus? Itaque amet distinctio quas nihil, vitae perferendis modi cumque. Id, natus quod. Provident explicabo perspiciatis libero. Eius cum facilis aliquam deserunt labore voluptates eveniet, voluptas commodi sunt voluptatum totam quam odio. At ducimus, accusantium laborum perferendis quod ad, culpa voluptatem nulla quasi nobis iste. Dolorum, vero. Placeat optio quidem consectetur suscipit quos nam repellendus quaerat alias, architecto omnis dolore sit dolorem dolorum accusantium voluptatibus cumque, minus quod inventore fugit? Quis fugiat neque et, error molestiae praesentium hic quaerat itaque, labore, iste aspernatur eveniet tempore quia debitis in velit temporibus inventore aut recusandae at optio repellendus! Itaque esse soluta officia corrupti? Minus nostrum tempore natus nesciunt nihil cupiditate architecto aut enim fugit aliquid culpa, voluptatum, inventore asperiores quis accusantium iusto omnis esse repellat illum placeat fuga deleniti praesentium! Assumenda dolor atque perspiciatis ut officia praesentium commodi quisquam beatae unde, autem rerum facere consequuntur? Dolor minus pariatur possimus, expedita sit veritatis odit ab, nostrum non accusantium consequatur. Exercitationem corporis dolore enim voluptas praesentium consequuntur optio dolores ipsum ad repellat qui, ex labore maxime quos, provident iure numquam earum eius a molestias accusantium quibusdam. Nostrum ullam alias est!"
 function App() {
+  let [readMore,setReadMore]=useState(false);
+ const changeButtonState=()=>{
+  setReadMore(readMore?false:true)
+ }
+ let button=readMore?"Read Less":"Read More"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container App my-3">
+     <p>{readMore?text:`${text.substring(0,text.length/2)}.....`}</p>
+     <button type="button" className='btn btn-danger' onClick={changeButtonState}>{button}</button>
     </div>
   );
 }
